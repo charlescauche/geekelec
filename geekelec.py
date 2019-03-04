@@ -1,5 +1,6 @@
 import requests
 import datetime
+import json
 
 
 # user = "af56fbc7-e759-4430-93c3-b9954ea81bcb"
@@ -34,4 +35,4 @@ payload = {'start_date' : '2019-03-04T00:00:00Z' , 'end_date' : '2019-03-06T00:0
 r = requests.get(rURL, params=payload, headers=headers)
 
 print(r.json())
-print(r)
+print(json.dumps(r,indent = 4))

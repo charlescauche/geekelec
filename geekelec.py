@@ -1,16 +1,16 @@
 import requests
 import datetime
 import json
+import secret
 
 
-# user = "af56fbc7-e759-4430-93c3-b9954ea81bcb"
-# pwd = "2c59be31-e61c-47c1-bfb5-c8a55dded8bc" 
+
 # base = "YWY1NmZiYzctZTc1OS00NDMwLTkzYzMtYjk5NTRlYTgxYmNiOjJjNTliZTMxLWU2MWMtNDdjMS1iZmI1LWM4YTU1ZGRlZDhiYw=="
 
 #Autorization step
 
 URL = 'https://digital.iservices.rte-france.com/token/oauth/'
-headers = {'Content-Type': 'application/x-www-form-urlencoded', 'Authorization' : 'Basic YWY1NmZiYzctZTc1OS00NDMwLTkzYzMtYjk5NTRlYTgxYmNiOjJjNTliZTMxLWU2MWMtNDdjMS1iZmI1LWM4YTU1ZGRlZDhiYw=='}
+headers = {'Content-Type': 'application/x-www-form-urlencoded', 'Authorization' : 'Basic '+secret.token}
 
 r = requests.post(URL, headers=headers)
 
@@ -34,5 +34,7 @@ payload = {'start_date' : '2019-03-04T00:00:00Z' , 'end_date' : '2019-03-06T00:0
 
 r = requests.get(rURL, params=payload, headers=headers)
 
-print(r.json())
-print(json.dumps(r,indent = 4))
+print("===========")
+p = json.dumps(r.json(),indent = 4)
+print(p)
+

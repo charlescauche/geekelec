@@ -4,7 +4,6 @@
 """function mailSub to register user email in a list"""
 
 import sys
-print(sys.version)
 
 
 def addMail():
@@ -20,8 +19,6 @@ def addMail():
 		print("Thanks, we added your address to our list")
 		print("We will send you an email to validate your subsciption")
 		print(mailing_list)
-
-
 
 
 # Version test 
